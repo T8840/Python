@@ -1,0 +1,23 @@
+
+<html>
+	<head>
+		<title> Login Page </title>
+	</head>
+	<body>
+		<form action="{{ url_for("login") }}" method="POST" name="login">
+			<p>
+				User Name:<br>
+				<input type="text" name="username" /><br>
+			</p>
+			<p>
+				Password:<br>
+				<input type="password" name="password" /></br>
+			</p>
+			<p>
+				<input type="checkbox" name="remember_me" />Remember Me
+			</p>
+				{{ form.csrf }}
+		</form>
+	</body>
+</html>
+

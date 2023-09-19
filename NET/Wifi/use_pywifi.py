@@ -40,9 +40,15 @@ def connect_wifi():
 
     iface.remove_all_network_profiles() # delete all saved wifi config
     tmp_profile = iface.add_network_profile(profile)
+    iface.connect(tmp_profile)
+    time.sleep(10)
+    if iface.status() == const.IFACE_CONNECTED:
+        print("New Wifi Connected!")
+    else:
+        print("New Wifi Not Connected!")
 
 
 
 if __name__ == "__main__":
-
+    disconnect_wifi()
 
